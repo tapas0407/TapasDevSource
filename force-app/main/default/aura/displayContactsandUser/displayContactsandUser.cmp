@@ -1,0 +1,26 @@
+<aura:component controller="GetContactsUser"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    
+    <aura:attribute name="searchText" type="String" default=""/>
+    <aura:attribute name="PaginationList" type="List"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="columns" type="List"/>
+	
+    <div class="slds-page-header">
+        <div class="slds-align_absolute-center">
+            Lists of Contacts
+        </div>
+    </div>
+    <ui:inputText value="{!v.searchText}" class="slds-lookup__search-input slds-input" placeholder="Search"  keyup="{!c.filterMsgs}" updateOn="keyup"  />
+    <!--<aura:iteration items="{!v.PaginationList}" var="thread" >
+        
+        Name : {!thread.Name}
+        
+    </aura:iteration>-->
+    
+    <lightning:datatable
+                keyField="id"
+                data="{! v.data }"
+                columns="{! v.columns }"
+                hideCheckboxColumn="true"/>
+</aura:component>
