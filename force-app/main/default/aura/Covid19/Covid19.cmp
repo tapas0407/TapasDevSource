@@ -1,0 +1,51 @@
+<aura:component controller="covid19"
+                implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes,force:lightningQuickAction" access="global" >
+    <aura:attribute name="active" type="Decimal" default=""/>
+    <aura:attribute name="death" type="Decimal" default=""/>
+    <aura:attribute name="affectedCountries" type="Decimal" default=""/>
+    <aura:attribute name="recovered" type="Decimal" default=""/>
+    <ltng:require
+        
+        scripts="{!$Resource.BasicCharts + '/BasicCharts.js'}"
+        afterScriptsLoaded="{!c.scriptsLoaded}" />
+    
+    <aura:handler name= "init" value = "{!this}" action="{!c.showData}"/>
+    <div class="slds-grid slds-grid--align-center">
+    <div class="slds-text-heading_large">
+    CORONA LIVE UPDATES :-
+    </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="c-container">
+        
+        <lightning:layoutItem padding="around-small" size="12">
+            
+            <div class="page-section page-main">
+                <div class="slds-p-left_medium slds-p-around_medium">
+                    <div class="slds-grid slds-grid--align-left">
+                    <lightning:input   type="text" name="Country" label="Counrty" placeholder="Country" aura:id="country"/>
+                       <span>Enter StateName for India Only
+                        </span>
+                         
+                    </div>
+                    <lightning:button variant="success" label="Submit" onclick="{!c.Onclick}" />
+                </div>
+                <div class="slds-p-left_medium slds-p-around_medium">
+                    ACTIVE COUNT :-  {!v.active} <br/>
+                </div>
+                <div class="slds-p-left_medium slds-p-around_medium">
+                    DEATH COUNT :-  {!v.death} <br/>
+                </div>
+                <div class="slds-p-left_medium slds-p-around_medium">
+                    AFFECTED COUNTRIES :-  {!v.affectedCountries} <br/>
+                </div>
+                <div class="slds-p-left_medium slds-p-around_medium">
+                    RECOVERED :-  {!v.recovered} <br/>
+                </div>
+            </div>
+        </lightning:layoutItem>
+    </div>
+    
+    
+</aura:component>

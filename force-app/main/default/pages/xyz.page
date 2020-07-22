@@ -1,0 +1,9 @@
+<apex:page controller="myController">
+    <style>
+    body {
+        background-image: url("http://www.w3schools.com/cssref/img_tree.gif");
+        background-repeat:repeat;
+    }
+</style>
+    {!myString}, {!StringMethod1}, {!StringMethod2}, {!myString}
+</apex:page>

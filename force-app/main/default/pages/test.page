@@ -1,0 +1,10 @@
+<apex:page showHeader="false">
+
+
+<block text-align="right">
+<external-graphic src="https://cpqsep-dev-ed--c.ap4.content.force.com/servlet/servlet.ImageServer?id=0156F00000G41n0&oid=00D6F000002W0zo&lastMod=1541150013000"  content-height="scale-to-fit" height="1.5in"  content-width="2.00in" scaling="non-uniform"/>
+</block>
+
+ 
+
+</apex:page>
